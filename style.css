@@ -1,0 +1,91 @@
+@import url("https://fonts.google.com/specimen/Libre+Franklin");
+* {
+  box-sizing: border-box; }
+
+button:focus,
+input:focus {
+  outline: none; }
+
+body {
+  padding-top: 70px;
+  margin: 0;
+  font-size: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; }
+
+.container {
+  max-width: 375px;
+  margin: auto;
+  text-align: center;
+  padding: 15px; }
+  .container .page-logo {
+    font-size: 1.4em;
+    font-weight: 600; }
+    .container .page-logo span {
+      color: #4f7df3; }
+  .container .page-title {
+    word-spacing: -2px;
+    letter-spacing: -1px;
+    margin-top: 50px;
+    font-weight: 300;
+    color: #969696; }
+    .container .page-title span {
+      color: #111;
+      font-weight: 600; }
+  .container form {
+    margin: auto;
+    max-width: 350px; }
+    .container form .form-title {
+      color: #222;
+      font-size: 0.75em;
+      font-weight: 400; }
+    .container form .email-input {
+      margin-top: 40px;
+      position: relative;
+      width: 100%;
+      height: 50px;
+      text-align: left; }
+      .container form .email-input label, .container form .email-input input {
+        font-size: 0.70em; }
+      .container form .email-input label {
+        color: #bcc5e0;
+        padding-left: 30px;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        z-index: 10;
+        transform: translateY(-50%); }
+      .container form .email-input input {
+        padding-left: 30px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 1px solid #444;
+        border-radius: 30px; }
+    .container form button {
+      border-radius: 30px;
+      margin-top: 15px;
+      width: 100%;
+      height: 50px;
+      color: #ffffff;
+      background-color: #4f7df3;
+      border: none;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      font-weight: 500;
+      font-size: 0.8em;
+      box-shadow: 0 10px 20px rgba(79, 125, 243, 0.3); }
+  .container .image {
+    margin-top: 80px;
+    width: 100%; }
+    .container .image > img {
+      width: 100%; }
+
+.attribution {
+  font-size: 11px;
+  text-align: center; }
+
+.attribution a {
+  color: #3e52a3; }
