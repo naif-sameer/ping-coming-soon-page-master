@@ -13,7 +13,8 @@ body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; }
 
 .container {
-  max-width: 375px;
+  padding-left: 15px;
+  padding-right: 15px;
   margin: auto;
   text-align: center; }
   .container .page-logo {
@@ -32,7 +33,7 @@ body {
       font-weight: 600; }
   .container form {
     margin: auto;
-    max-width: 350px; }
+    max-width: 375px; }
     .container form .form-title {
       color: #222;
       font-size: 0.75em;
@@ -89,6 +90,14 @@ body {
     width: 100%; }
     .container .image > img {
       width: 100%; }
+
+footer {
+  margin-top: 100px;
+  text-align: center; }
+  footer .title {
+    font-size: 0.6em;
+    font-weight: 400;
+    color: #7689c0; }
 
 .attribution {
   font-size: 11px;

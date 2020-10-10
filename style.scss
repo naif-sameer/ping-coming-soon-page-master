@@ -21,7 +21,8 @@ body {
 }
 
 .container {
-  max-width: 375px;
+  padding-left: 15px;
+  padding-right: 15px;
   margin: auto;
   text-align: center;
   
@@ -51,18 +52,13 @@ body {
     $border-radius: 30px;
 
     margin: auto;
-    max-width: 350px;
+    max-width: 375px;
     .form-title {
       color: #222;
       font-size: 0.75em;
       font-weight: 400;
     }
 
-    // &: label{
-    //   display: none;
-    // }
-    
-    
     .email-input {
       margin-top: 40px;
       position: relative;
@@ -71,12 +67,12 @@ body {
       text-align: left;
       
       // padding for label and input
-      %padding-label {
+      %font-size {
         font-size: 0.70em;
       }
 
       input {
-        @extend %padding-label;
+        @extend %font-size;
         
         padding-left: 30px;
         padding-right: 30px;
@@ -95,7 +91,7 @@ body {
       }
       
       label {
-        @extend %padding-label;
+        @extend %font-size;
         
         transition: transform .25s linear;
         background-color: #fff;
@@ -138,6 +134,17 @@ body {
     & > img {
       width: 100%;
     }
+  }
+}
+
+footer {
+  margin-top: 100px;
+  text-align: center;
+
+  .title {
+    font-size: 0.6em;
+    font-weight: 400;
+    color: darken(#bcc5e0, 20%)
   }
 }
 
