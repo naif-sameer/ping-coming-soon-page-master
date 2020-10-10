@@ -1,0 +1,10 @@
+{
+  "name": "ping-coming-soon-page-master",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "sass": "node-sass style.scss style.css -w"
+    },
+  "author": "Naif Sameer",
+  "license": "MIT"
+}
