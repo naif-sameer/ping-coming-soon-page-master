@@ -12,7 +12,7 @@
       href="./images/favicon-32x32.png"
     />
     <title>Frontend Mentor | Ping coming soon page</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <div class="container">
@@ -21,9 +21,14 @@
       <!-- page form  -->
       <form>
         <h3 class="form-title">Subscribe and get notified</h3>
-        <div class="email-input">
-          <input type="email" name="email" id="email-label-id" />
-          <label class="email-label" for="email-label-id">Email address</label>
+        <div class="email-container">
+          <div class="email-input">
+            <input type="email" name="email" id="email-id"/>
+            <label class="email-label" for="email-id">Email address</label>
+          </div>
+          <div class="email-err-msg is-hide">
+            Please provide a valid email address
+          </div>
         </div>
         <button>Notify Me</button>
       </form>
@@ -47,5 +52,26 @@
         <a href="https://facebook.com/naif.sameer.dev"> Naif Sameer </a>.
       </p>
     </footer>
+    <script>
+      let el = (el) => document.querySelector(el);
+
+      function emailCheck() {
+        function errMsgCheck() {
+           if(el("input:valid")) {
+              el(".email-err-msg").classList.add("is-hide");
+            } else {
+              el(".email-err-msg").classList.remove("is-hide");
+           }
+        }
+        errMsgCheck();
+        el("#email-id").oninput = function () {
+           errMsgCheck();
+        };
+      }
+
+      el("button").onclick = () => {
+        emailCheck();
+      };
+    </script>
   </body>
 </html>
