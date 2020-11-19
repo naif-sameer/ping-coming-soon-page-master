@@ -1,4 +1,4 @@
-@import url("https://fonts.google.com/specimen/Libre+Franklin");
+// @import url("https://fonts.google.com/specimen/Libre+Franklin");
 
 * {
   box-sizing: border-box;
@@ -10,14 +10,14 @@ input:focus {
 }
 
 $primary-color: hsl(223, 87%, 63%);
-$secondary-color:  hsl(0, 0%, 59%);
-
+$secondary-color: hsl(0, 0%, 59%);
 
 body {
   padding-top: 70px;
   margin: 0;
   font-size: 20px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .container {
@@ -25,34 +25,35 @@ body {
   padding-right: 15px;
   margin: auto;
   text-align: center;
-  
+
   .page-logo {
     font-size: 1.4em;
     font-weight: 600;
-    
+
     span {
       color: $primary-color;
     }
   }
-  
+
   .page-title {
     word-spacing: -2px;
     letter-spacing: -1px;
     margin-top: 50px;
     font-weight: 300;
     color: $secondary-color;
-    
+
     span {
       color: #111;
       font-weight: 600;
     }
   }
-  
+
   form {
     $border-radius: 30px;
 
     margin: auto;
     max-width: 375px;
+
     .form-title {
       color: #222;
       font-size: 0.75em;
@@ -65,15 +66,16 @@ body {
       width: 100%;
       height: 50px;
       text-align: left;
-      
-      // padding for label and input
-      %font-size {
-        font-size: 0.70em;
-      }
 
+      // font size for label and input
+      %font-size {
+        font-size: 0.7em;
+      }
+      
+      $err-color: lighten(red,15);
       input {
         @extend %font-size;
-        
+
         padding-left: 30px;
         padding-right: 30px;
         position: absolute;
@@ -82,29 +84,39 @@ body {
         height: 100%;
         border: 1px solid #444;
         border-radius: $border-radius;
+
+        &:invalid {
+          border-color: $err-color; 
+          // label color
+          & ~ label {
+            color: $err-color;
+          }
+        }
       }
 
-      //hide the label 
+      // hide the label
       input:focus ~ label,
-      input:invalid ~ label{
+      input:invalid ~ label
+       {
         transform: translate(20px, -33px);
       }
       
       label {
         @extend %font-size;
-        
-        transition: transform .25s linear;
         background-color: #fff;
-        color: rgb(188 ,197, 224);
+        transition-property: transform, background, color;
+        transition-duration: 0.25s;
+        transition-timing-function: linear;
+        color: $secondary-color;
         position: absolute;
         top: 50%;
         z-index: 10;
         padding-right: 10px;
         padding-left: 10px;
         transform: translate(20px, -50%);
-      }  
+      }
     }
-    
+
     button {
       border-radius: $border-radius;
       margin-top: 15px;
@@ -118,7 +130,7 @@ body {
       font-weight: 500;
       font-size: 0.8em;
       box-shadow: 0 10px 20px rgba($primary-color, 0.3);
-      transition: background .2s linear;
+      transition: background 0.2s linear;
 
       &:hover {
         background-color: darken($primary-color, 10%);
@@ -136,6 +148,14 @@ body {
     }
   }
 }
+@media (min-width: 800px) {
+  .image {
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
 
 footer {
   margin-top: 100px;
@@ -143,35 +163,41 @@ footer {
 
   .social-icon {
     & > i {
-      padding: 3px;
-      width: 30px;
-      height: 30px;
+      font-size: 1.2em;
+      $icon-size: 10px;
+      width: $icon-size;
+      padding: 7px;
       color: $primary-color;
+      cursor: pointer;
       border-radius: 50%;
-      box-shadow: 0px 0px 10px rgba(128, 128, 128,0.3);
-      transition: color .3s linear;
+      box-shadow: 0px 0px 4px rgba(128, 128, 128, 0.3);
+      transition: color 0.3s linear;
+
+      &:not(:last-of-type) {
+        margin-right: 15px;
+      }
 
       &:hover {
-        color: darken($primary-color, 30%)
+        color: darken($primary-color, 30%);
       }
     }
   }
 
   .title {
-    font-size: 0.7em;
+    margin-top: 34px;
+    font-size: 0.6em;
     font-weight: 400;
-    color: darken(#bcc5e0, 20%)
+    color: darken(#bcc5e0, 20%);
   }
 }
 
 .attribution {
   margin-top: 40px;
   margin-bottom: 40px;
-  font-size: .6em;
+  font-size: 0.6em;
   text-align: center;
 }
 
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
-
