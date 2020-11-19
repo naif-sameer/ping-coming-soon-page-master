@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "sass": "node-sass style.scss style.css -w"
+    "sass": "node-sass --output-style compressed css/style.scss css/style.css -w --source-map true --source-map-contents scss"
     },
   "author": "Naif Sameer",
   "license": "MIT"
