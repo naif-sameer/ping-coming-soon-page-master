@@ -15,7 +15,7 @@ input:focus {
 
 $primary-color: hsl(223, 87%, 63%);
 $secondary-color: hsl(0, 0%, 59%);
-$err-color: lighten( rgba(244, 67, 54, 84%) , 5);
+$err-color: lighten(rgba(244, 67, 54, 84%), 5);
 
 body {
   padding-top: 70px;
@@ -54,31 +54,22 @@ body {
   }
 }
 
-form {
-  $border-radius: 40px;
-
-  margin: auto;
-  max-width: 400px;
-
+.form-container {
   .form-title {
     color: #222;
     font-size: 0.75em;
     font-weight: 400;
   }
+}
 
+form {
+  max-width: 400px;
+  margin: auto;
+
+  $border-radius: 40px;
   $email-height: 60px;
   .email-container {
     margin-top: 50px;
-
-
-    .email-err-msg {
-      text-align: center;
-      width: 100%;
-      margin-top: 12px;
-      margin-bottom: 20px;
-      font-size: 0.70em;
-      color: darken($err-color, 10);
-    }
 
     .email-input {
       position: relative;
@@ -90,10 +81,10 @@ form {
     %font-size {
       font-size: 0.7em;
     }
-    
+
     input {
       @extend %font-size;
-      
+
       padding-left: 30px;
       padding-right: 30px;
       position: absolute;
@@ -102,7 +93,7 @@ form {
       height: 100%;
       border: 1px solid #444;
       border-radius: $border-radius;
-      
+
       &:invalid {
         border-color: $err-color;
         // label color
@@ -115,9 +106,9 @@ form {
     input:focus ~ label,
     input:invalid ~ label {
       // move the email  label to the top on foucs
-      transform: translate(20px, -( ($email-height / 2) + 8 ));
+      transform: translate(20px, -(($email-height / 2) + 8));
     }
-    
+
     label {
       @extend %font-size;
       background-color: #fff;
@@ -131,10 +122,18 @@ form {
       padding-right: 10px;
       padding-left: 10px;
       transform: translate(20px, -50%);
-      
     }
   }
-  
+
+  .email-err-msg {
+    text-align: center;
+    width: 100%;
+    margin-top: 12px;
+    margin-bottom: 20px;
+    font-size: 0.7em;
+    color: darken($err-color, 10);
+  }
+
   button {
     border-radius: $border-radius;
     margin-top: 15px;
@@ -167,6 +166,31 @@ form {
 }
 
 @media (min-width: 800px) {
+  form {
+    min-width: 600px;
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-around;
+
+    .email-container {
+      flex-basis: 68%;
+      margin-top: 40px;
+    }
+
+    .email-err-msg {
+      width: 500px;
+      padding-left: 30px;
+      margin-bottom: 0;
+      text-align: left;
+      position: absolute;
+    }
+
+    button {
+      flex-basis: 28%;
+      margin-top: 40px;
+    }
+  }
+
   .image {
     max-width: 1200px;
     margin-right: auto;
